@@ -1030,3 +1030,7 @@ button.phone .phone-notch, .phone-notch { width: auto; height: 16px; margin: 0 0
 .phone-title { font: bold 13px Tahoma, Verdana, sans-serif; text-align: left; }
 .phone-photo { border-radius: 0; border: 1px dashed #808080; color: #555; }
 .btn.danger { background: #c3c3c3; border: 2px solid; border-color: #fff #404040 #404040 #fff; box-shadow: 1px 1px 0 #000; border-radius: 0; color: #a0102e; }
+/* фото в окнах: жестко внутри рамки (в Safari картинка вылезала за край) */
+.w98-b { position: relative; overflow: hidden; contain: paint; }
+.w98-b img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
+.g-img { contain: paint; }
