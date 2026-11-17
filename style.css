@@ -1018,3 +1018,15 @@ img { max-width: 100%; }
 .toggle i { width: 48px; height: 28px; border-radius: 14px; box-sizing: border-box; }
 .toggle i::after { top: 2px; left: 2px; width: 21px; height: 21px; }
 .toggle input:checked + i::after { left: 22px; }
+/* кнопки окна в порядке Windows: свернуть, развернуть, закрыть */
+.win-btns i:last-child { margin-left: 2px; }
+
+/* «Мои планы» — окошки Блокнота в стиле Windows 98 вместо пастельных телефонов */
+.phones { gap: 18px 12px; }
+.phone, button.phone { border-radius: 0; padding: 0 0 4px; background: #c3c3c3; border: 2px solid; border-color: #fff #404040 #404040 #fff; box-shadow: 1px 1px 0 #000, 4px 6px 14px rgba(10, 30, 80, .3); }
+button.phone .phone-notch, .phone-notch { width: auto; height: 16px; margin: 0 0 3px; border: 0; border-radius: 0; background: linear-gradient(90deg, #0a246a, #a6caf0); position: relative; }
+.phone-notch::after { content: "– ▢ ✕"; position: absolute; right: 4px; top: 1px; font: bold 9px Tahoma, sans-serif; color: #fff; letter-spacing: 2px; }
+.phone-screen { margin: 0 4px; border-radius: 0; border: 2px solid; border-color: #808080 #fff #fff #808080; background: #fffbd6; }
+.phone-title { font: bold 13px Tahoma, Verdana, sans-serif; text-align: left; }
+.phone-photo { border-radius: 0; border: 1px dashed #808080; color: #555; }
+.btn.danger { background: #c3c3c3; border: 2px solid; border-color: #fff #404040 #404040 #fff; box-shadow: 1px 1px 0 #000; border-radius: 0; color: #a0102e; }
