@@ -1007,3 +1007,7 @@ img { max-width: 100%; }
 .bubble, .bubble span, .z-quote, .sheet-name b, .w98-t span { overflow-wrap: anywhere; word-break: break-word; }
 .page-title { font-size: clamp(19px, 6.4vw, 26px); overflow-wrap: anywhere; min-width: 0; }
 .topbar { min-width: 0; }
+/* EN/中文: притяжательное («Ilya’s», «伊利亚的») пишется маркером НАД заголовком, чтобы читалось по порядку */
+.z-head.pre { padding-top: 6px; }
+.z-head.pre .z-scribble { position: relative; right: auto; bottom: auto; display: inline-block; margin: 0 0 -14px 6px; font-size: clamp(38px, 11vw, 54px); transform: rotate(-6deg); z-index: 2; }
+:lang(zh) .z-head .z-scribble { font: 700 clamp(28px, 8vw, 40px)/1.1 "Kaiti SC", "STKaiti", "KaiTi", "PingFang SC", sans-serif; margin-bottom: 2px; }
