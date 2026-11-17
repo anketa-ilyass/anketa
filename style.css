@@ -1,3 +1,6 @@
+@font-face { font-family: "Onest"; src: url("fonts/onest.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Golos"; src: url("fonts/golos.woff2") format("woff2"); font-weight: 400 900; font-display: swap; }
+@font-face { font-family: "Bad Script"; src: url("fonts/badscript.woff2") format("woff2"); font-weight: 400; font-display: swap; }
 :root {
   --pink: #ff5fae;
   --hot: #ff2e93;
@@ -9,8 +12,13 @@
   --paper: rgba(255, 255, 255, .72);
   --vk: #45688e;
   --vk-l: #dae1e8;
-  --serif: "Times New Roman", Times, "Noto Serif", "Liberation Serif", serif;
-  --sans: Tahoma, Verdana, "Segoe UI", Roboto, Arial, sans-serif;
+  --serif: "Golos", -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Roboto, Arial, sans-serif;
+  --sans: "Golos", -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Roboto, Arial, sans-serif;
+  --head: "Onest", "Golos", -apple-system, "PingFang SC", "Noto Sans SC", Roboto, Arial, sans-serif;
+  --hand: "Bad Script", "Golos", "Kaiti SC", "STKaiti", cursive;
+  --rserif: "Times New Roman", Times, "Noto Serif", Georgia, serif;
+  --rsans: "Arial Black", Impact, Tahoma, Arial, sans-serif;
+  --vkfont: Tahoma, Verdana, "Segoe UI", Roboto, Arial, sans-serif;
   --mono: "Courier New", Courier, "Noto Sans Mono", monospace;
 }
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -51,14 +59,14 @@ button { font: inherit; color: inherit; }
   box-shadow: 1px 2px 0 rgba(0, 0, 0, .18);
 }
 .r-space { display: inline-block; width: .35em; }
-.r-a { background: #ffe14d; color: #d6007a; font-family: var(--serif); font-weight: bold; }
-.r-b { background: #111; color: #fff; font-family: var(--sans); font-weight: 900; text-transform: uppercase; font-size: .85em; }
+.r-a { background: #ffe14d; color: #d6007a; font-family: var(--rserif); font-weight: bold; }
+.r-b { background: #111; color: #fff; font-family: var(--rsans); font-weight: 900; text-transform: uppercase; font-size: .85em; }
 .r-c { background: #7ad3ff; color: #fff; font-family: var(--mono); font-weight: bold; -webkit-text-stroke: 1px #1a4c8a; }
-.r-d { background: #fff; color: #e60012; font-family: var(--serif); font-style: italic; font-weight: bold; }
-.r-e { background: #ff8ac6; color: #2a1b6b; font-family: var(--sans); font-weight: bold; font-size: 1.08em; }
+.r-d { background: #fff; color: #e60012; font-family: var(--rserif); font-style: italic; font-weight: bold; }
+.r-e { background: #ff8ac6; color: #2a1b6b; font-family: var(--rsans); font-weight: bold; font-size: 1.08em; }
 .r-f { background: #b6f27a; color: #003b8f; font-family: var(--mono); text-transform: uppercase; }
-.r-g { background: #2f2a8f; color: #ffeb3b; font-family: var(--serif); font-weight: bold; font-size: .92em; }
-.r-h { background: #fff; color: #009b4d; font-family: var(--sans); font-weight: 900; font-style: italic; text-decoration: underline; }
+.r-g { background: #2f2a8f; color: #ffeb3b; font-family: var(--rserif); font-weight: bold; font-size: .92em; }
+.r-h { background: #fff; color: #009b4d; font-family: var(--rsans); font-weight: 900; font-style: italic; text-decoration: underline; }
 .cover-sub { margin-top: 14px; font-size: 18px; }
 .sparkles { color: #fff; text-shadow: 0 0 8px #ff7fc1; font-size: 22px; letter-spacing: 10px; margin-top: 6px; }
 
@@ -226,7 +234,7 @@ details.mini summary { cursor: pointer; font-family: var(--sans); font-weight: b
 .vk-body { display: grid; grid-template-columns: 128px 1fr; gap: 12px; padding: 12px 10px; }
 .vk-ava { position: relative; width: 128px; min-height: 150px; background: linear-gradient(#e9eef3, #c7d2de); display: grid; place-items: center; overflow: hidden; }
 .vk-ava img { width: 100%; display: block; }
-.vip { position: absolute; top: 4px; left: 4px; right: 4px; text-align: center; font: 900 28px/1 var(--serif); color: #e8c25a; -webkit-text-stroke: 1px #6b4a00; text-shadow: 2px 2px 0 #3a2700; }
+.vip { position: absolute; top: 4px; left: 4px; right: 4px; text-align: center; font: 900 28px/1 var(--rserif); color: #e8c25a; -webkit-text-stroke: 1px #6b4a00; text-shadow: 2px 2px 0 #3a2700; }
 .noava { font-size: 26px; }
 .noava.big { font-size: 64px; margin-top: 26px; }
 .vk-btn { width: 100%; margin-top: 6px; padding: 5px; background: #6d8fb3; border: 1px solid #45688e; color: #fff; font-size: 11px; cursor: pointer; }
@@ -427,3 +435,32 @@ button.month { display: block; width: 100%; padding: 0; text-align: left; font: 
 .month-list { margin-bottom: 14px; max-height: 50vh; overflow: auto; }
 .month-list .bd { font-size: 16px; padding: 8px 0; }
 .month-list .bd i { color: var(--lilac); }
+
+
+/* ---------- шрифты: заголовки Onest, текст Golos, ответы Bad Script ---------- */
+body { font-size: 16px; }
+.page-title, .sheet-h {
+  font-family: var(--head); font-style: normal; font-weight: 800; text-transform: none; letter-spacing: -.2px;
+  -webkit-text-stroke: .8px #ff5fae; text-shadow: 2px 2px 0 #ff9ccd;
+}
+.page-title { font-size: 25px; }
+.sheet-h { font-size: 20px; }
+.win-title { font-weight: 600; }
+.paper { font-size: 16px; line-height: 1.6; }
+.letter .ps, .letter .sign { font-style: normal; }
+.intro { font-style: normal; font-size: 14px; }
+.btn { font-weight: 700; }
+/* все, что пишут люди, — «от руки» */
+.f input, .f textarea, .lines .line b, .hand, .phone-text, .wish-t, .hand-in, .rule-edit input, .rule-add input, .sheet-name b, .month-list .bd span {
+  font-family: var(--hand);
+}
+.f input, .f textarea { font-size: 19px; }
+.f textarea { line-height: 30px; background: repeating-linear-gradient(transparent 0 29px, #b9adf0 29px 30px); }
+.hand { font-size: 19px; line-height: 30px; background: repeating-linear-gradient(transparent 0 29px, #d3c9f7 29px 30px); }
+.lines .line b { font-size: 18px; }
+.sheet-name b { font-size: 28px; }
+.phone-text { font-size: 15px; }
+#lf input { font-family: var(--sans); font-size: 17px; }
+.f > span { font-size: 14px; color: #6b5f8a; }
+.vk { font-family: var(--vkfont); }
+.vk-bars, .statusbar, .bar { font-family: var(--mono); }
