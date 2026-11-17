@@ -479,3 +479,8 @@ body { font-size: 16px; }
 .toggle input:checked + i { background: var(--hot); }
 .toggle input:checked + i::after { left: 23px; }
 .toggle b { min-width: 52px; font-size: 13px; color: var(--lilac-d); }
+
+/* фраза дня на главной */
+.cheer { font-family: var(--hand); font-size: 21px; line-height: 1.35; color: var(--hot); margin: 10px auto 0; max-width: 320px; min-height: 2.7em; text-shadow: 0 1px 0 #fff; }
+.statusbar #clock { font-size: 14px; letter-spacing: 1px; }
+.statusbar .colon { animation: blink 1s steps(2) infinite; }
