@@ -17,19 +17,37 @@
   <link rel="preconnect" href="https://identitytoolkit.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://securetoken.googleapis.com" crossorigin>
   <link rel="preload" href="fonts/golos.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/nunito.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="bg" aria-hidden="true">
-    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
-    <svg class="smiley" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="35" cy="40" r="5" fill="currentColor"/><circle cx="65" cy="40" r="5" fill="currentColor"/><path d="M28 60 Q50 82 72 60" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
-    <div class="rainbow"></div>
+    <svg class="rainbow-arc" viewBox="0 0 400 220" preserveAspectRatio="xMidYMax meet">
+      <g fill="none" stroke-width="16" stroke-linecap="butt">
+        <path d="M24 220 A176 176 0 0 1 376 220" stroke="#ff8fab"/>
+        <path d="M40 220 A160 160 0 0 1 360 220" stroke="#ffbf80"/>
+        <path d="M56 220 A144 144 0 0 1 344 220" stroke="#ffe680"/>
+        <path d="M72 220 A128 128 0 0 1 328 220" stroke="#9ee6a8"/>
+        <path d="M88 220 A112 112 0 0 1 312 220" stroke="#8fc8ff"/>
+        <path d="M104 220 A96 96 0 0 1 296 220" stroke="#c4a3ff"/>
+      </g>
+      <g fill="none" stroke="#2b1d4a" stroke-width="3">
+        <path d="M16 220 A184 184 0 0 1 384 220"/><path d="M112 220 A88 88 0 0 1 288 220"/>
+      </g>
+      <g fill="#fff" stroke="#2b1d4a" stroke-width="3">
+        <path d="M6 220 q0-26 26-26 q6-16 24-14 q14-12 30 2 q20 0 20 22 q16 4 14 16z"/>
+        <path d="M394 220 q0-26-26-26 q-6-16-24-14 q-14-12-30 2 q-20 0-20 22 q-16 4-14 16z"/>
+      </g>
+    </svg>
+    <svg class="smiley" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="35" cy="40" r="5" fill="currentColor"/><circle cx="65" cy="40" r="5" fill="currentColor"/><path d="M28 60 Q50 82 72 60" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
   </div>
   <main id="app"><div class="loading"><div class="spinner">✦</div><div>Загрузка…</div></div></main>
-  <footer class="statusbar">
-    <span><b id="clock"></b></span>
-    <span class="blink">● online</span>
+  <footer class="taskbar">
+    <button class="start" id="startBtn">✦ пуск</button>
+    <div class="tasks" id="tasks"></div>
+    <div class="tray"><span id="trayNew"></span><b id="clock"></b></div>
   </footer>
+  <div class="startmenu" id="startMenu" hidden></div>
   <script type="module" src="app.js"></script>
 </body>
 </html>
