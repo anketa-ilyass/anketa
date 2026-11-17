@@ -41,7 +41,7 @@ button { font: inherit; color: inherit; }
 .b2 { width: 60vmax; height: 60vmax; background: #ffc2e2; right: -25vmax; top: 20vh; }
 .b3 { width: 50vmax; height: 50vmax; background: #fff4a8; left: -10vmax; bottom: -20vmax; }
 .b4 { width: 40vmax; height: 40vmax; background: #e2ccff; right: 10vw; bottom: -10vmax; }
-.smiley { position: absolute; left: 50%; top: 42%; transform: translate(-50%, -50%); font-size: 70vmin; color: rgba(255, 150, 200, .16); line-height: 1; }
+.smiley { position: absolute; left: 50%; top: 42%; transform: translate(-50%, -50%); width: 62vmin; height: 62vmin; color: rgba(255, 150, 200, .18); }
 .rainbow {
   position: absolute; right: -20vw; bottom: 8vh; width: 90vw; height: 26vw; min-height: 120px;
   background: linear-gradient(180deg, #ff9a9e, #fbc2a6, #fff3a0, #b8f0b0, #a6d8ff, #c7b3ff);
