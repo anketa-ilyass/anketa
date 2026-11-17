@@ -464,3 +464,4 @@ body { font-size: 16px; }
 .f > span { font-size: 14px; color: #6b5f8a; }
 .vk { font-family: var(--vkfont); }
 .vk-bars, .statusbar, .bar { font-family: var(--mono); }
+.icon .lbl { text-transform: lowercase; }
