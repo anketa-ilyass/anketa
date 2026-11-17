@@ -465,3 +465,17 @@ body { font-size: 16px; }
 .vk { font-family: var(--vkfont); }
 .vk-bars, .statusbar, .bar { font-family: var(--mono); }
 .icon .lbl { text-transform: lowercase; }
+
+/* ---------- счетчик новых, переключатель приема ---------- */
+.icon .ico { position: relative; }
+.badge { position: absolute; top: -6px; right: -6px; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 11px; background: var(--hot); color: #fff; font: bold 12px/22px var(--sans); font-style: normal; text-align: center; border: 2px solid #fff; box-shadow: 0 2px 6px rgba(255, 46, 147, .4); }
+.lbl-new { color: var(--hot); }
+.new-tag { font: bold 11px var(--sans); font-style: normal; color: #fff; background: var(--hot); padding: 1px 6px; border-radius: 8px; vertical-align: middle; }
+.toggle { display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: rgba(255,255,255,.85); border: 2px solid var(--lilac-d); box-shadow: 4px 4px 0 rgba(91,69,194,.35); font: 14px var(--sans); cursor: pointer; }
+.toggle > span { flex: 1; }
+.toggle input { position: absolute; opacity: 0; pointer-events: none; }
+.toggle i { flex: none; width: 46px; height: 26px; border-radius: 13px; background: #d6cff0; position: relative; transition: background .2s; }
+.toggle i::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.3); transition: left .2s; }
+.toggle input:checked + i { background: var(--hot); }
+.toggle input:checked + i::after { left: 23px; }
+.toggle b { min-width: 52px; font-size: 13px; color: var(--lilac-d); }
