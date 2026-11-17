@@ -100,7 +100,7 @@ var ir={apiKey:"AIzaSyBQUHUUKN3m7WIGcZEaFHyMTSP9fuLHeEQ",authDomain:"anketochka.
     <div class="phones">
       ${Up.map((e,n)=>`
         <button class="phone tilt-${n}" data-k="${e}">
-          <div class="phone-notch"></div>
+          <div class="phone-notch"><span class="xp-btns"><i></i><i></i><i></i></span></div>
           <div class="phone-screen">
             <div class="phone-title">${l.plans[e]}</div>
             <div class="phone-text ${t[e]?"":"empty"}">${t[e]?Qt(t[e]):l.tapToWrite}</div>

@@ -1034,3 +1034,35 @@ button.phone .phone-notch, .phone-notch { width: auto; height: 16px; margin: 0 0
 .w98-b { position: relative; overflow: hidden; contain: paint; }
 .w98-b img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
 .g-img { contain: paint; }
+
+/* ---------- кнопки окна в стиле Windows XP — одинаковые везде ---------- */
+.win-btns, .xp-btns { display: flex; gap: 2px; margin-left: auto; flex: none; }
+.w98-t { gap: 2px; }
+.win-btns i, .win-btns i:first-child, .w98-t i, .xp-btns i {
+  position: relative; display: block; flex: none; width: 18px; height: 18px; padding: 0; font-size: 0; color: transparent; line-height: 0;
+  border: 1px solid #fff; border-radius: 3px; box-sizing: border-box;
+  background: linear-gradient(180deg, #6f9cf8 0%, #3a6fe6 45%, #2457d6 100%);
+  box-shadow: inset 0 0 0 1px rgba(10, 36, 106, .25);
+}
+.win-btns i:nth-child(3), .w98-t i:nth-of-type(3), .xp-btns i:nth-child(3) { background: linear-gradient(180deg, #f09a78 0%, #e0623a 45%, #c4421f 100%); }
+.win-btns i::before, .win-btns i::after, .w98-t i::before, .w98-t i::after, .xp-btns i::before, .xp-btns i::after { content: ""; position: absolute; background: #fff; }
+/* свернуть */
+.win-btns i:nth-child(1)::before, .w98-t i:nth-of-type(1)::before, .xp-btns i:nth-child(1)::before { left: 4px; bottom: 4px; width: 7px; height: 2.5px; }
+.win-btns i:nth-child(1)::after, .w98-t i:nth-of-type(1)::after, .xp-btns i:nth-child(1)::after { display: none; }
+/* развернуть */
+.win-btns i:nth-child(2)::before, .w98-t i:nth-of-type(2)::before, .xp-btns i:nth-child(2)::before { left: 3.5px; top: 3.5px; width: 9px; height: 9px; background: transparent; border: 1.5px solid #fff; border-top-width: 3px; box-sizing: border-box; }
+.win-btns i:nth-child(2)::after, .w98-t i:nth-of-type(2)::after, .xp-btns i:nth-child(2)::after { display: none; }
+/* закрыть */
+.win-btns i:nth-child(3)::before, .win-btns i:nth-child(3)::after, .w98-t i:nth-of-type(3)::before, .w98-t i:nth-of-type(3)::after, .xp-btns i:nth-child(3)::before, .xp-btns i:nth-child(3)::after {
+  left: 50%; top: 50%; width: 11px; height: 2.5px; border-radius: 1px;
+}
+.win-btns i:nth-child(3)::before, .w98-t i:nth-of-type(3)::before, .xp-btns i:nth-child(3)::before { transform: translate(-50%, -50%) rotate(45deg); }
+.win-btns i:nth-child(3)::after, .w98-t i:nth-of-type(3)::after, .xp-btns i:nth-child(3)::after { transform: translate(-50%, -50%) rotate(-45deg); }
+/* маленькие окна (фото на главной, блокноты в планах) */
+.w98-t i, .xp-btns i { width: 15px; height: 15px; }
+.w98-t i:nth-of-type(1)::before, .xp-btns i:nth-child(1)::before { left: 3px; bottom: 3px; width: 6px; height: 2px; }
+.w98-t i:nth-of-type(2)::before, .xp-btns i:nth-child(2)::before { left: 3px; top: 3px; width: 7px; height: 7px; border-width: 1.2px; border-top-width: 2.5px; }
+.w98-t i:nth-of-type(3)::before, .w98-t i:nth-of-type(3)::after, .xp-btns i:nth-child(3)::before, .xp-btns i:nth-child(3)::after { width: 9px; height: 2px; }
+.phone-notch { height: 20px; display: flex; align-items: center; padding: 0 2px; }
+.phone-notch::after { content: none; }
+.win-title { align-items: center; }
