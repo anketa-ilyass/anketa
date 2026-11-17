@@ -1014,3 +1014,7 @@ img { max-width: 100%; }
 /* EN/中文: сердечки не налезают на надпись — одно справа у заголовка, второе маленькое у надписи */
 .z-head.pre .chrome-heart.h1 { right: 14px; top: auto; bottom: 18px; width: 38px; transform: rotate(14deg); }
 .z-head.pre .chrome-heart.h2 { left: auto; right: 62px; top: auto; bottom: 64px; width: 20px; transform: rotate(-10deg); }
+/* переключатель: кружок внутри дорожки с учетом рамки */
+.toggle i { width: 48px; height: 28px; border-radius: 14px; box-sizing: border-box; }
+.toggle i::after { top: 2px; left: 2px; width: 21px; height: 21px; }
+.toggle input:checked + i::after { left: 22px; }
