@@ -481,6 +481,6 @@ body { font-size: 16px; }
 .toggle b { min-width: 52px; font-size: 13px; color: var(--lilac-d); }
 
 /* фраза дня на главной */
-.cheer { font-family: var(--hand); font-size: 21px; line-height: 1.35; color: var(--hot); margin: 10px auto 0; max-width: 320px; min-height: 2.7em; text-shadow: 0 1px 0 #fff; }
+.cheer { font-family: var(--hand); font-size: 21px; line-height: 1.35; color: #4a2fa8; margin: 10px auto 0; max-width: 320px; min-height: 2.7em; text-shadow: 0 0 6px rgba(255,255,255,.95), 0 0 2px #fff; }
 .statusbar #clock { font-size: 14px; letter-spacing: 1px; }
 .statusbar .colon { animation: blink 1s steps(2) infinite; }
