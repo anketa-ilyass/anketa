@@ -1074,3 +1074,4 @@ button.phone .phone-notch, .phone-notch { width: auto; height: 16px; margin: 0 0
 .splash-inner small { display: block; margin-top: 12px; color: #fff; font: 12px var(--sans); text-shadow: 0 1px 2px rgba(0,0,0,.5); }
 .dial-lines.slow li { animation-duration: .4s; }
 .dial-bar.slow i { animation-duration: 3.8s; animation-timing-function: linear; }
+.dialup .dial-bar i { animation-duration: 1.9s; animation-timing-function: linear; }
