@@ -997,8 +997,8 @@ p.muted.center.small { color: #fff; text-shadow: 0 1px 2px rgba(10,30,90,.7); }
 
 /* ---------- мобильные баги ---------- */
 /* пока открыта клавиатура — панель задач и меню не висят над ней */
-body.typing .taskbar, body.kb .taskbar, body.typing .startmenu, body.kb .startmenu { display: none !important; }
-body.typing, body.kb { padding-bottom: 20px; }
+body.typing .taskbar, body.typing .startmenu { display: none !important; }
+body.typing { padding-bottom: 20px; }
 /* iOS увеличивает страницу при фокусе на поле со шрифтом меньше 16px */
 .bday select, .rule-edit input, .rule-add input, #lf input, .modal input, .modal textarea, .modal select { font-size: 16px; }
 /* ничего не вылезает по ширине */
