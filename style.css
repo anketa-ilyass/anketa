@@ -400,3 +400,30 @@ button.phone { border: none; cursor: pointer; text-align: left; font: inherit; c
 .bd i { font-style: normal; font-size: 11px; }
 .bd-toggle { background: none; border: none; font: bold 12px var(--sans); color: var(--lilac-d); padding: 4px 0 0; cursor: pointer; }
 .bday.two { grid-template-columns: .8fr 1.4fr; }
+
+/* ---------- правки, порция 2 ---------- */
+/* правила: удалить / добавить */
+.rules li { position: relative; padding-right: 26px; }
+.rule-x { position: absolute; right: 0; top: 2px; width: 22px; height: 22px; line-height: 18px; border: 1.5px solid #e3a3c2; background: #fff; color: #c2185b; border-radius: 50%; font: bold 15px var(--sans); cursor: pointer; padding: 0; }
+.rule-add { display: flex; gap: 6px; margin-top: 10px; }
+.rule-add input { flex: 1; min-width: 0; font: 16px var(--serif); border: 1.5px dashed #b9adf0; background: rgba(255,255,255,.6); padding: 8px; outline: none; color: var(--navy); }
+.rule-add .btn { padding: 6px 12px; }
+
+/* ВК-поиск как кнопка */
+.vk-search { border: none; font: 11px var(--sans); cursor: pointer; padding: 1px 40px 1px 6px; }
+.noava { font: bold 15px var(--sans); color: #8aa0b6; }
+.noava.big { font-size: 56px; color: #9fb2c6; }
+.fc-ava b { font: bold 20px var(--sans); color: #e05c9b; }
+.mode { padding: 18px 8px; }
+
+/* планы: пастельные рамки вместо черных */
+.phone { background: linear-gradient(160deg, #ffd1ea, #d9c8ff 55%, #bfe3ff); border: 2px solid #fff; box-shadow: 0 8px 20px rgba(150, 110, 210, .3), inset 0 0 0 1px rgba(138, 114, 230, .4); }
+.phone-notch { background: rgba(255, 255, 255, .85); }
+
+/* дни рождения: месяц как кнопка + модалка */
+button.month { display: block; width: 100%; padding: 0; text-align: left; font: inherit; color: inherit; cursor: pointer; }
+.month .bd { cursor: inherit; }
+.bd-more { font: bold 12px var(--sans); color: var(--lilac-d); padding-top: 4px; }
+.month-list { margin-bottom: 14px; max-height: 50vh; overflow: auto; }
+.month-list .bd { font-size: 16px; padding: 8px 0; }
+.month-list .bd i { color: var(--lilac); }
