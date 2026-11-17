@@ -502,3 +502,4 @@ body { font-size: 16px; }
 /* кнопка-телефон: содержимое прижато к верху, экран растягивается на всю высоту */
 button.phone { display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; }
 button.phone .phone-screen { flex: 1; }
+button.phone .phone-notch { flex: none; height: 10px; margin: -4px auto 8px; }
