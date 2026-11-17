@@ -738,3 +738,249 @@ body { background: #f4efff; padding-bottom: calc(64px + env(safe-area-inset-bott
 .months .month, .paper, .sheet, details.mini, .mode, .toggle, .cover-btn { background: #fff; }
 .demo-note { background: rgba(255,255,255,.85); display: inline-block; padding: 2px 8px; border-radius: 6px; }
 .icon .lbl { text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 2px #fff; }
+
+/* =====================================================================
+   v4 (черновик главной): журнал-коллаж — небо в «полоску», холм,
+   радуга над холмом, окна Windows с фото, пузыри переписки, роспись маркером
+   ===================================================================== */
+@font-face { font-family: "Unbounded"; src: url("fonts/unbounded.woff2") format("woff2"); font-weight: 900; font-display: swap; }
+@font-face { font-family: "Pixelify"; src: url("fonts/pixelify.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Caveat"; src: url("fonts/caveat.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+.bg {
+  background:
+    repeating-linear-gradient(180deg, rgba(255,255,255,.18) 0 1px, transparent 1px 4px),
+    radial-gradient(140% 55% at 50% 100%, #5fae3e 0 38%, #7fc64f 46%, transparent 47%),
+    radial-gradient(50% 18% at 20% 22%, rgba(255,255,255,.9), transparent 70%),
+    radial-gradient(40% 14% at 78% 30%, rgba(255,255,255,.85), transparent 70%),
+    radial-gradient(60% 16% at 55% 48%, rgba(255,255,255,.7), transparent 70%),
+    linear-gradient(180deg, #2f6fd6 0%, #5f9ae8 35%, #a9cdf5 62%, #d6e9fb 75%);
+}
+.bg::after { content: ""; position: absolute; inset: 0; opacity: .35; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.rainbow-arc { width: min(160vw, 860px); bottom: 26vh; opacity: .55; filter: blur(1.5px); }
+.rainbow-arc g:nth-of-type(2), .rainbow-arc g:nth-of-type(3) { display: none; }
+.smiley { display: none; }
+
+.zine { position: relative; background: rgba(244, 241, 236, .94); border: 1px solid #1d1a24; padding: 12px 14px 16px; margin-top: 4px; box-shadow: 0 14px 40px rgba(10, 30, 80, .35);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.z-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; font: 500 11px var(--sans); text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #1d1a24; padding-bottom: 8px; }
+.z-top .langs { gap: 3px; }
+.z-top .lang { border: 1px solid #1d1a24; box-shadow: none; padding: 2px 7px; font-size: 11px; border-radius: 3px; background: transparent; }
+.z-top .lang.on { background: #1d1a24; color: #fff; }
+.z-head { position: relative; padding: 14px 0 6px; border-bottom: 1px solid #1d1a24; }
+.z-title { margin: 0; font: 900 clamp(46px, 15vw, 74px)/.9 "Unbounded", var(--sans); letter-spacing: -2px; color: #1d1a24; transform: skewX(-8deg); }
+:lang(zh) .z-title { font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-weight: 900; letter-spacing: 0; }
+.z-scribble { position: absolute; right: 4px; bottom: -6px; font: 700 clamp(44px, 13vw, 64px)/1 "Caveat", cursive; color: #3b7be6; transform: rotate(-9deg); mix-blend-mode: multiply; opacity: .92; }
+.chrome-heart { position: absolute; width: 34px; filter: drop-shadow(0 3px 3px rgba(20, 40, 100, .35)); }
+.chrome-heart.h1 { right: 18px; top: -4px; transform: rotate(14deg); }
+.chrome-heart.h2 { left: 46%; top: 6px; width: 22px; transform: rotate(-12deg); }
+.z-cols { display: grid; grid-template-columns: 1.2fr 1fr; gap: 10px; padding: 10px 0; border-bottom: 1px solid #1d1a24; }
+.z-quote { margin: 0; font: italic 700 17px/1.2 var(--sans); color: #e2264d; }
+.z-small { margin: 0; font: 11px/1.45 var(--sans); color: #3b3646; border-left: 1px solid #1d1a24; padding-left: 10px; }
+
+/* окна Windows 98 с фото друзей */
+.z-windows { position: relative; height: 300px; margin: 14px 0 6px; }
+.w98 { position: absolute; width: 62%; background: #c3c3c3; border: 2px solid; border-color: #fff #404040 #404040 #fff; box-shadow: 1px 1px 0 #000, 4px 6px 14px rgba(0,0,0,.25); text-decoration: none; color: #000; }
+.w98.w0 { left: 0; top: 0; transform: rotate(-2deg); }
+.w98.w1 { right: 0; top: 40px; transform: rotate(3deg); z-index: 2; }
+.w98.w2 { left: 16%; top: 110px; transform: rotate(-1deg); z-index: 3; }
+.w98-t { display: flex; align-items: center; gap: 2px; padding: 2px 3px; background: linear-gradient(90deg, #0a246a, #a6caf0); color: #fff; font: bold 11px Tahoma, Verdana, sans-serif; }
+.w98-t span { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.w98-t i { font-style: normal; width: 14px; height: 12px; background: #c3c3c3; color: #000; border: 1px solid; border-color: #fff #404040 #404040 #fff; display: grid; place-items: center; font-size: 9px; line-height: 1; }
+.w98-m { padding: 1px 5px; font: 11px Tahoma, Verdana, sans-serif; }
+.w98-m u { text-decoration: none; margin-right: 6px; }
+.w98-m u::first-letter { text-decoration: underline; }
+.w98-b { margin: 2px 4px 4px; height: 118px; background: #fff; border: 2px solid; border-color: #808080 #fff #fff #808080; overflow: hidden; display: grid; place-items: center; }
+.w98-b img { width: 100%; height: 100%; object-fit: cover; }
+.w98-empty { font: 12px Tahoma, sans-serif; color: #555; padding: 10px; text-align: center; }
+
+/* переписка-пожелания */
+.z-chat { display: flex; flex-direction: column; gap: 10px; margin: 6px 0 14px; }
+.bubble { align-self: flex-end; max-width: 85%; text-decoration: none; color: #2a2740; background: #eef0fb; border-radius: 22px; padding: 10px 16px; box-shadow: 0 0 0 2.5px #fff, 0 0 0 5px #9aa6f0, 0 6px 14px rgba(60, 70, 160, .25); font: 500 15px/1.3 var(--sans); }
+.bubble small { display: block; font: 500 11px var(--sans); color: #6b6f9e; margin-bottom: 2px; }
+.bubble.bb1 { align-self: flex-start; }
+.bubble.typing { align-self: flex-start; background: #c8f5cf; box-shadow: 0 0 0 2.5px #fff, 0 0 0 5px #6fd884, 0 0 14px rgba(80, 210, 110, .5); padding: 6px 18px; font: 700 18px var(--sans); color: #fff; letter-spacing: 2px; }
+
+/* навигация — лаймовые таблетки с пиксельным шрифтом */
+.z-nav { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 0; border-top: 1px solid #1d1a24; }
+.pill { position: relative; padding: 7px 14px; border-radius: 999px; background: linear-gradient(180deg, #e4ff8a, #b3e84f); border: 1.5px solid #1d1a24; box-shadow: inset 0 2px 0 rgba(255,255,255,.7), 0 2px 0 #1d1a24; font: 600 15px "Pixelify", var(--sans); color: #1d1a24; text-decoration: none; text-transform: lowercase; }
+.pill:nth-child(3n+2) { background: linear-gradient(180deg, #ffd1ec, #ff9fd0); }
+.pill:nth-child(3n) { background: linear-gradient(180deg, #d9e8ff, #9fc2ff); }
+.pill .badge { position: absolute; top: -8px; right: -6px; min-width: 18px; height: 18px; line-height: 14px; padding: 0 5px; font-size: 11px; border: 2px solid #1d1a24; background: #e2264d; color: #fff; border-radius: 999px; }
+.z-foot { display: flex; align-items: flex-end; justify-content: space-between; border-top: 1px solid #1d1a24; padding-top: 10px; font: 600 11px var(--sans); letter-spacing: 1.5px; }
+.barcode { width: 110px; height: 32px; }
+.demo-note { background: rgba(255,255,255,.85); padding: 2px 8px; display: table; margin: 10px auto 0; }
+
+/* =====================================================================
+   v4 — внутренние страницы: окна Windows 98, панель задач как в XP,
+   заголовки Unbounded, кнопки-таблетки, ответы маркером
+   ===================================================================== */
+:root {
+  --ink: #1d1a24;
+  --hand: "Caveat", "Bad Script", "Kaiti SC", cursive;
+  --w98: Tahoma, Verdana, "Segoe UI", sans-serif;
+  --bevel-out: #fff #404040 #404040 #fff;
+  --bevel-in: #808080 #fff #fff #808080;
+  --lime: linear-gradient(180deg, #e4ff8a, #b3e84f);
+  --shadow: 4px 6px 14px rgba(10, 30, 80, .3);
+}
+body { color: var(--ink); }
+
+/* заголовки страниц на небе: белые, жирные, наклонные */
+.topbar { margin: 4px 0 14px; }
+.page-title {
+  font: 900 26px/1 "Unbounded", var(--sans); letter-spacing: -1px; transform: skewX(-8deg); text-transform: uppercase;
+  background: none; color: #fff; -webkit-text-stroke: 0; filter: none; text-shadow: 2px 2px 0 var(--ink), 0 0 18px rgba(10, 30, 90, .45);
+}
+:lang(zh) .page-title { font-family: "PingFang SC", "Noto Sans SC", sans-serif; letter-spacing: 0; }
+.back { width: 38px; height: 38px; border-radius: 0; background: #c3c3c3; border: 2px solid; border-color: var(--bevel-out); box-shadow: 1px 1px 0 #000; color: #000; font-size: 18px; }
+.langs .lang { border-radius: 3px; border: 1px solid var(--ink); background: rgba(255,255,255,.85); box-shadow: none; font: 600 12px var(--sans); }
+.langs .lang.on { background: var(--ink); color: #fff; }
+
+/* окна — классика Windows 98 */
+.win, .win-lilac, .win-yellow, .win-error, .win-remember { border: 2px solid; border-color: var(--bevel-out); border-radius: 0; background: #c3c3c3; box-shadow: 1px 1px 0 #000, var(--shadow); overflow: visible; }
+.win-title, .win-lilac .win-title, .win-yellow .win-title, .win-error .win-title, .win-remember .win-title, .sheet-form > .win:nth-of-type(n) .win-title {
+  display: flex; flex-direction: row; gap: 4px; padding: 3px 4px 3px 6px; background: linear-gradient(90deg, #0a246a, #a6caf0); color: #fff;
+  font: bold 12px var(--w98); border: 0; text-shadow: none; border-radius: 0;
+}
+.win-error .win-title { background: linear-gradient(90deg, #8a0f2c, #e8a0b4); }
+.win-btns { order: 2; margin-left: auto; display: flex; gap: 2px; }
+.win-btns i, .win-btns i:first-child { display: grid; place-items: center; width: 16px; height: 14px; border-radius: 0; background: #c3c3c3; color: #000; border: 1px solid; border-color: var(--bevel-out); font: bold 9px var(--w98); }
+.win-body { margin: 3px; background: #fff; border: 2px solid; border-color: var(--bevel-in); }
+.modal .win { box-shadow: 1px 1px 0 #000, 8px 12px 30px rgba(10, 30, 80, .45); }
+
+/* бумага (правила, от автора, анкета друга) — как страница журнала */
+.paper, .sheet, details.mini { border: 1px solid var(--ink); border-radius: 0; box-shadow: var(--shadow); background: #f4f1ec; }
+.sheet-h { font: 900 20px/1.05 "Unbounded", var(--sans); letter-spacing: -.5px; transform: skewX(-8deg); text-transform: uppercase; background: none; color: var(--ink); -webkit-text-stroke: 0; filter: none; text-shadow: none; text-align: left; }
+.sheet-name span, .lines .line span { color: #6b6676; }
+
+/* кнопки: главные — лаймовые таблетки, обычные — серые кнопки Windows */
+.btn { border-radius: 0; background: #c3c3c3; color: #000; border: 2px solid; border-color: var(--bevel-out); box-shadow: 1px 1px 0 #000; font: 600 14px var(--w98); padding: 8px 14px; }
+.btn:active { border-color: var(--bevel-in); transform: none; box-shadow: none; }
+.btn.big { border-radius: 999px; background: var(--lime); color: var(--ink); border: 1.5px solid var(--ink); box-shadow: inset 0 2px 0 rgba(255,255,255,.7), 0 3px 0 var(--ink); text-shadow: none; font: 600 17px "Pixelify", var(--sans); text-transform: lowercase; }
+.btn.big:active { transform: translateY(2px); box-shadow: inset 0 2px 0 rgba(255,255,255,.7), 0 1px 0 var(--ink); }
+.btn.tg { border-radius: 999px; background: linear-gradient(180deg, #d9e8ff, #9fc2ff); color: var(--ink); border: 1.5px solid var(--ink); box-shadow: 0 3px 0 var(--ink); }
+.btn.danger { color: #a0102e; }
+.mode, .toggle, .cover-btn { border-radius: 0; border: 2px solid; border-color: var(--bevel-out); background: #c3c3c3; box-shadow: 1px 1px 0 #000, var(--shadow); }
+.mode b { font: bold 14px var(--w98); color: #000; }
+.mode small { font: 11px var(--w98); color: #333; }
+.toggle { font: 13px var(--w98); }
+.toggle i { border: 1.5px solid var(--ink); }
+.toggle input:checked + i { background: #6fd884; }
+.share-bar { border-radius: 999px; border: 1.5px dashed #fff; background: rgba(10, 36, 106, .55); color: #fff; font: 600 14px var(--sans); }
+
+/* поля ввода и ответы — маркером */
+.f input, .f textarea { font-family: var(--hand); font-size: 22px; color: #1f3fa8; }
+.lines .line b, .hand, .phone-text, .wish-t, .sheet-name b, .hand-in { font-family: var(--hand); color: #1f3fa8; }
+.lines .line b { font-size: 21px; }
+.sheet-name b { font-size: 34px; }
+.posbar button { border-radius: 0; border: 1px solid; border-color: var(--bevel-out); background: #c3c3c3; color: #333; }
+.posbar button.on { background: var(--lime); color: var(--ink); border-color: var(--ink); }
+.bday select { border-radius: 0; border: 2px solid; border-color: var(--bevel-in); background: #fff; font: 14px var(--w98); }
+.heart { -webkit-text-stroke: 0; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.25); font-family: var(--sans); }
+
+/* проводник с фото друзей */
+.win-explorer .win-body { padding: 10px; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 8px; }
+.g-item { text-decoration: none; color: #000; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.g-img { position: relative; width: 100%; aspect-ratio: 1; overflow: hidden; background: linear-gradient(135deg, #a9cdf5, #ffd1ec); display: grid; place-items: center; border: 1px solid #808080; }
+.g-img img { width: 100%; height: 100%; object-fit: cover; }
+.g-img b { font: 700 32px var(--hand); color: rgba(0,0,0,.4); }
+.g-img .new-tag { position: absolute; top: 3px; left: 3px; background: #e2264d; color: #fff; font: bold 10px var(--w98); padding: 1px 4px; border-radius: 0; }
+.g-name { font: 11px var(--w98); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.g-item:active .g-name { background: #0a246a; color: #fff; }
+
+/* пожелание в анкете друга — пузырь переписки */
+.sheet-chat { margin: 0 0 18px; }
+.chat-h { font: 900 14px "Unbounded", var(--sans); text-transform: uppercase; color: #fff; text-shadow: 1px 1px 0 var(--ink); transform: skewX(-8deg); }
+.sheet-chat .bubble { align-self: flex-start; }
+
+/* планы */
+.phone { border: 1.5px solid var(--ink); box-shadow: var(--shadow); background: linear-gradient(160deg, #e6f0ff, #c7dcff 55%, #f0f4ff); }
+.phone-screen { border: 1px solid rgba(29, 26, 36, .4); background: #fffdf2; }
+.phone-notch { background: #fff; border: 1px solid rgba(29,26,36,.4); border-top: 0; }
+.phone-title { font: 600 14px var(--sans); }
+
+/* карта желаний — хромированные пузыри */
+.wish { border: 1.5px solid #24356e; box-shadow: 0 6px 14px rgba(20, 40, 100, .35);
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,.9) 54%, transparent 55%),
+    radial-gradient(circle at 30% 25%, #fff, #cfe4ff 25%, #5f8fe0 60%, #2c4fa8 85%, #9fc2ff); }
+.wish::after { box-shadow: none; }
+.wish-q { color: #2c4fa8; font: 700 3.2em var(--hand); }
+.intro { color: #fff; text-shadow: 0 1px 3px rgba(10, 30, 90, .7); font-weight: 500; }
+.intro.small { color: #fff; }
+
+/* дни рождения — как страница журнала-ежедневника */
+.months { gap: 0; border: 1px solid var(--ink); background: #f4f1ec; box-shadow: var(--shadow); border-radius: 0; }
+.months .month { border: 0; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); border-radius: 0; box-shadow: none; background: transparent; }
+.months .month:nth-child(2n) { border-right: 0; }
+.months .month:nth-last-child(-n+2) { border-bottom: 0; }
+.month-h { background: transparent !important; color: var(--ink); border-bottom: 1px dashed rgba(29,26,36,.35); font: 900 11px "Unbounded", var(--sans); letter-spacing: 1px; text-transform: uppercase; transform: skewX(-8deg); }
+.month.now { background: #eaffc2; }
+.bd b { color: #e2264d; }
+.bd span { font-family: var(--hand); font-size: 18px; color: #1f3fa8; }
+p.muted.center.small { color: #fff; text-shadow: 0 1px 2px rgba(10,30,90,.7); }
+
+/* ВК оставляем узнаваемым */
+.vk { border: 1px solid #45688e; border-radius: 0; box-shadow: var(--shadow); }
+
+/* загрузка — окно Windows с синей полоской */
+.dial-lines { font: 12px/1.7 var(--w98); }
+.dial-lines li::before { color: #0a7a1e; }
+.dial-bar { border: 2px solid; border-color: var(--bevel-in); border-radius: 0; height: 18px; background: #fff; }
+.dial-bar i { background: repeating-linear-gradient(90deg, #0a246a 0 8px, #fff 8px 10px); }
+
+/* ---------- панель задач как в Windows XP ---------- */
+.taskbar { background: linear-gradient(180deg, #3f8cf3 0%, #245edb 10%, #245edb 85%, #1941a5 100%); border-top: 1px solid #0f2f7a; backdrop-filter: none; }
+.start { border-radius: 0 12px 12px 0; margin-left: -8px; padding: 0 16px 0 14px; height: 36px; background: linear-gradient(180deg, #5cd65c, #2f9e2f 55%, #237a23); border: 0; box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 2px 0 3px rgba(0,0,0,.3); color: #fff; font: italic bold 17px var(--w98); text-shadow: 1px 1px 1px rgba(0,0,0,.5); }
+.start.on, .start:active { background: linear-gradient(180deg, #2f9e2f, #237a23); transform: none; box-shadow: inset 0 2px 4px rgba(0,0,0,.4); }
+.task { border-radius: 3px; border: 1px solid #1941a5; background: linear-gradient(180deg, #4e8ff6, #3471e0); color: #fff; font: 12px var(--w98); box-shadow: inset 0 1px 0 rgba(255,255,255,.3); }
+.task.on { background: linear-gradient(180deg, #1e4fbf, #2a5ed0); box-shadow: inset 1px 1px 2px rgba(0,0,0,.4); color: #fff; }
+.tray { border-radius: 0; border: 0; border-left: 1px solid #0f2f7a; background: linear-gradient(180deg, #13b5f0, #0f8fd8); box-shadow: inset 1px 0 0 rgba(255,255,255,.3); margin-right: -8px; padding: 0 10px; height: 46px; }
+.tray #clock { font: 12px var(--w98); color: #fff; }
+.tray-new { background: #e2264d; color: #fff; border: 1px solid #fff; font: bold 10px var(--w98); }
+
+/* меню «пуск» как в XP */
+.startmenu { left: 0; border-radius: 8px 8px 0 0; border: 1px solid #0f2f7a; background: #fff; box-shadow: 4px 4px 12px rgba(0,0,0,.45); overflow: hidden; }
+.sm-head { background: linear-gradient(180deg, #1c63d8, #3a81f3); border-bottom: 2px solid #f2a43a; color: #fff; }
+.sm-head b { font: bold 16px var(--w98); color: #fff; text-shadow: 1px 1px 1px rgba(0,0,0,.4); }
+.sm-head small { font: 11px var(--w98); color: #dfeaff; }
+.sm-ava { border: 2px solid #fff; border-radius: 4px; background: linear-gradient(135deg, #ffd1ec, #a9cdf5); color: var(--ink); font: 700 24px var(--hand); }
+.sm-list b { font: bold 13px var(--w98); color: #000; }
+.sm-list small { font: 11px var(--w98); color: #555; }
+.sm-list a:hover, .sm-list a:active { background: #316ac5; }
+.sm-list a:hover b, .sm-list a:hover small, .sm-list a:active b, .sm-list a:active small { color: #fff; }
+.sm-foot { background: linear-gradient(180deg, #3a81f3, #1c63d8); border-top: 1px solid #0f2f7a; }
+.sm-foot button { border: 0; border-radius: 3px; background: transparent; color: #fff; font: 12px var(--w98); }
+
+/* уведомления — пузырь из мессенджера */
+.toast { border-radius: 22px; background: #eef0fb; color: #2a2740; border: 0; box-shadow: 0 0 0 2.5px #fff, 0 0 0 5px #9aa6f0, 0 6px 14px rgba(60, 70, 160, .3); font: 500 14px var(--sans); }
+
+/* вход: заголовок как на обложке */
+.cover .ransom { margin-top: 6px; }
+.r, .r-a, .r-b, .r-c, .r-d, .r-e, .r-f, .r-g, .r-h {
+  background: none !important; border: 0 !important; box-shadow: none !important; transform: none !important; text-decoration: none !important; text-transform: uppercase !important;
+  font: 900 1em "Unbounded", var(--sans) !important; color: #fff !important; -webkit-text-stroke: 0 !important; padding: 0; margin: 0;
+}
+.ransom { font-size: 34px; transform: skewX(-8deg); text-shadow: 2px 2px 0 var(--ink); letter-spacing: -1px; }
+.r-space { width: .3em; }
+.cover-sub { color: #fff; text-shadow: 0 1px 3px rgba(10,30,90,.7); font: 500 15px var(--sans); }
+.z-windows[data-n="1"] { height: 185px; }
+.z-windows[data-n="1"] .w98.w0 { left: 8%; width: 78%; }
+.z-windows[data-n="2"] { height: 245px; }
+/* радуга «растет» из-за холма: холм — отдельным слоем поверх радуги */
+.bg {
+  background:
+    repeating-linear-gradient(180deg, rgba(255,255,255,.18) 0 1px, transparent 1px 4px),
+    radial-gradient(50% 18% at 20% 22%, rgba(255,255,255,.9), transparent 70%),
+    radial-gradient(40% 14% at 78% 30%, rgba(255,255,255,.85), transparent 70%),
+    radial-gradient(60% 16% at 55% 48%, rgba(255,255,255,.7), transparent 70%),
+    linear-gradient(180deg, #2f6fd6 0%, #5f9ae8 35%, #a9cdf5 62%, #d6e9fb 75%);
+}
+.bg::before { content: ""; position: absolute; inset: 0; z-index: 1;
+  background:
+    repeating-linear-gradient(180deg, rgba(255,255,255,.08) 0 1px, transparent 1px 4px),
+    radial-gradient(140% 55% at 50% 100%, #5fae3e 0 38%, #7fc64f 46%, transparent 46.6%); }
+.bg::after { z-index: 2; }
+.rainbow-arc { z-index: 0; bottom: 8vh; width: min(150vw, 900px); opacity: .6; filter: blur(1px); }
