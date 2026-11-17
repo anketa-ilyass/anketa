@@ -1066,3 +1066,11 @@ button.phone .phone-notch, .phone-notch { width: auto; height: 16px; margin: 0 0
 .phone-notch { height: 20px; display: flex; align-items: center; padding: 0 2px; }
 .phone-notch::after { content: none; }
 .win-title { align-items: center; }
+/* заставка дозвона */
+.splash { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 20px; background: rgba(20, 40, 110, .35); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); transition: opacity .35s; }
+.splash.out { opacity: 0; }
+.splash-inner { width: min(340px, 100%); text-align: center; }
+.splash-inner .win { text-align: left; }
+.splash-inner small { display: block; margin-top: 12px; color: #fff; font: 12px var(--sans); text-shadow: 0 1px 2px rgba(0,0,0,.5); }
+.dial-lines.slow li { animation-duration: .4s; }
+.dial-bar.slow i { animation-duration: 3.8s; animation-timing-function: linear; }
