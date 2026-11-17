@@ -484,3 +484,16 @@ body { font-size: 16px; }
 .cheer { font-family: var(--hand); font-size: 21px; line-height: 1.35; color: #4a2fa8; margin: 10px auto 0; max-width: 320px; min-height: 2.7em; text-shadow: 0 0 6px rgba(255,255,255,.95), 0 0 2px #fff; }
 .statusbar #clock { font-size: 14px; letter-spacing: 1px; }
 .statusbar .colon { animation: blink 1s steps(2) infinite; }
+
+/* правки: подсказка к правилам, обложка, обязательное фото, подписка */
+.rule-hint { font: 12px/1.4 var(--sans); color: var(--muted); margin: 8px 0 0; }
+.cover-btn { display: flex; align-items: center; gap: 12px; width: 100%; margin-top: 16px; padding: 10px; background: rgba(255,255,255,.85); border: 2px solid var(--lilac-d); box-shadow: 4px 4px 0 rgba(91,69,194,.35); cursor: pointer; text-align: left; font: bold 15px var(--sans); color: var(--navy); }
+.cover-btn img { width: 64px; height: 90px; object-fit: cover; transform: rotate(-4deg); box-shadow: 0 3px 8px rgba(0,0,0,.25); border: 3px solid #fff; flex: none; }
+.cover-btn span::after { content: " ›"; color: var(--hot); }
+.modal-wide .modal-inner { max-width: 560px; max-height: 92vh; }
+.win-cover .win-body { padding: 6px; }
+.cover-full { display: block; width: 100%; height: auto; }
+.heart-box.bad .ph-img.heart { animation: shake .4s; filter: drop-shadow(0 0 6px #ff2e93); }
+.heart-box.bad small { color: #c2185b; font-weight: bold; }
+@keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+.vk-btn.on { background: #e9eef3; color: var(--vk); border-color: #b9c4d0; }
