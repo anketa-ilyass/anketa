@@ -497,3 +497,5 @@ body { font-size: 16px; }
 .heart-box.bad small { color: #c2185b; font-weight: bold; }
 @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
 .vk-btn.on { background: #e9eef3; color: var(--vk); border-color: #b9c4d0; }
+
+.icon .ico img { width: 50px; height: 50px; object-fit: contain; display: block; filter: drop-shadow(0 2px 2px rgba(91,69,194,.18)); }

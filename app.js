@@ -28,7 +28,7 @@ var rr={apiKey:"AIzaSyBQUHUUKN3m7WIGcZEaFHyMTSP9fuLHeEQ",authDomain:"anketochka.
       <div class="cheer">${N(l.cheers[Math.floor(Math.random()*l.cheers.length)])}</div>
     </div>
     <nav class="desktop">
-      ${t.map(([e,n,r])=>`<a class="icon" href="${e}" data-k="${r}"><span class="ico">${n}<i class="badge" hidden></i></span><span class="lbl">${l.nav[r]}<span class="lbl-new"></span></span></a>`).join("")}
+      ${t.map(([e,n,r])=>`<a class="icon" href="${e}" data-k="${r}"><span class="ico"><img src="icons/${r}.webp" alt="" width="50" height="50"><i class="badge" hidden></i></span><span class="lbl">${l.nav[r]}<span class="lbl-new"></span></span></a>`).join("")}
     </nav>
     ${z?`<p class="demo-note">${l.demo}</p>`:""}
     <p class="center"><button class="linkish" data-act="pass">${l.changePass}</button> \xB7 <button class="linkish" data-act="logout">${l.logout}</button></p>
