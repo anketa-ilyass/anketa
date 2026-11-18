@@ -1149,3 +1149,8 @@ button.phone .phone-notch, .phone-notch { width: auto; height: 16px; margin: 0 0
 html { background: #2f6fd6; }
 body { background: transparent; }
 .bg { top: calc(-1 * env(safe-area-inset-top, 0px) - 2px); bottom: calc(-1 * env(safe-area-inset-bottom, 0px) - 2px); }
+
+/* «для друзей» поверх черного заголовка: без затемнения + светлая обводка */
+.z-scribble { mix-blend-mode: normal; opacity: 1; z-index: 3;
+  text-shadow: 0 0 1px #f2f1ee, 2px 0 0 #f2f1ee, -2px 0 0 #f2f1ee, 0 2px 0 #f2f1ee, 0 -2px 0 #f2f1ee,
+    2px 2px 0 #f2f1ee, -2px -2px 0 #f2f1ee, 2px -2px 0 #f2f1ee, -2px 2px 0 #f2f1ee, 3px 0 1px #f2f1ee, -3px 0 1px #f2f1ee, 0 3px 1px #f2f1ee, 0 -3px 1px #f2f1ee; }
