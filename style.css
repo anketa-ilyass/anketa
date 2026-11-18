@@ -1086,3 +1086,7 @@ button.phone .phone-notch, .phone-notch { width: auto; height: 16px; margin: 0 0
 .posbar button { min-width: 24px; }
 /* неверная дата */
 .bday.bad select { border-color: #e2264d !important; background: #ffe8ef; }
+/* окна с фото на главной не наследуют размеры кружков карты желаний (.w0–.w5) */
+.w98.w0, .w98.w1, .w98.w2 { height: auto; }
+.z-windows[data-n="1"] { height: 250px; }
+.z-windows[data-n="1"] .w98-b { height: 185px; }
