@@ -1091,3 +1091,25 @@ button.phone .phone-notch, .phone-notch { width: auto; height: 16px; margin: 0 0
 .z-windows[data-n="1"] { height: 250px; }
 .z-windows[data-n="1"] .w98-b { height: 185px; }
 .btn:disabled, .btn.danger:disabled { opacity: .45; color: #6b6676; cursor: default; box-shadow: none; }
+/* QR вместо штрихкода */
+.qr { display: flex; align-items: flex-end; gap: 8px; text-decoration: none; color: var(--ink); }
+.qr img { width: 64px; height: 64px; background: #fff; padding: 3px; border: 1px solid var(--ink); }
+.qr small { font: 600 10px var(--sans); letter-spacing: 1px; text-transform: uppercase; }
+.sheet-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+/* печать анкеты в PDF: только сама анкета, на белом листе */
+@media print {
+  @page { size: A4; margin: 14mm; }
+  html, body { background: #fff !important; padding: 0 !important; overflow: visible !important; }
+  .bg, .taskbar, .startmenu, .toast, .modal, .splash, .vpn-banner, .langs, .back, .sheet-actions, .muted.small, .ph-remove { display: none !important; }
+  #app { max-width: none; padding: 0; }
+  .topbar { margin: 0 0 8mm; }
+  .page-title { color: #1d1a24 !important; text-shadow: none !important; font-size: 26pt; }
+  .sheet, .win, .sheet-chat .bubble { box-shadow: none !important; break-inside: avoid; }
+  .win { border: 1px solid #1d1a24 !important; }
+  .win-title { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .heart, .polaroid, .g-img { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .chat-h { color: #1d1a24 !important; text-shadow: none !important; }
+  .sheet-chat .bubble { border: 1px solid #9aa6f0; }
+  .polaroid { max-width: 70mm; max-height: 80mm; object-fit: cover; }
+}
