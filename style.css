@@ -1090,3 +1090,4 @@ button.phone .phone-notch, .phone-notch { width: auto; height: 16px; margin: 0 0
 .w98.w0, .w98.w1, .w98.w2 { height: auto; }
 .z-windows[data-n="1"] { height: 250px; }
 .z-windows[data-n="1"] .w98-b { height: 185px; }
+.btn:disabled, .btn.danger:disabled { opacity: .45; color: #6b6676; cursor: default; box-shadow: none; }
