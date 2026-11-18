@@ -1142,3 +1142,10 @@ button.phone .phone-notch, .phone-notch { width: auto; height: 16px; margin: 0 0
 .ms-mode { display: flex; gap: 8px; justify-content: center; margin: 12px 0 4px; }
 .ms-mode .btn.on { border-color: #808080 #fff #fff #808080; background: #b0b0b0; box-shadow: none; }
 .ms-hint { text-align: center; font: 12px Tahoma, sans-serif; color: #333; margin: 6px 0 0; }
+
+/* ---------- фон под статус-баром iOS ---------- */
+/* Safari красит зоны вне фиксированного .bg (под часами, при «оттягивании» страницы)
+   цветом страницы — делаем его цветом неба, а сам фон растягиваем за края экрана */
+html { background: #2f6fd6; }
+body { background: transparent; }
+.bg { top: calc(-1 * env(safe-area-inset-top, 0px) - 2px); bottom: calc(-1 * env(safe-area-inset-bottom, 0px) - 2px); }
