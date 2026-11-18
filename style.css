@@ -1123,3 +1123,22 @@ button.phone .phone-notch, .phone-notch { width: auto; height: 16px; margin: 0 0
 .z-foot > span { white-space: nowrap; }
 .plant { margin: -46px auto -4px; }
 .qr small { white-space: nowrap; }
+
+/* ---------- сапёр ---------- */
+.win-mines .win-body { padding: 10px; background: #c3c3c3; }
+.ms { border: 3px solid; border-color: #fff #808080 #808080 #fff; padding: 6px; background: #c3c3c3; width: fit-content; margin: 0 auto; }
+.ms-top { display: flex; align-items: center; justify-content: space-between; border: 2px solid; border-color: #808080 #fff #fff #808080; padding: 4px 6px; margin-bottom: 6px; }
+.ms-led { background: #000; color: #ff2a1a; font: bold 22px/1 "Courier New", monospace; padding: 2px 4px; letter-spacing: 1px; min-width: 46px; text-align: center; }
+.ms-face { width: 36px; height: 36px; font-size: 22px; line-height: 1; background: #c3c3c3; border: 2px solid; border-color: #fff #808080 #808080 #fff; cursor: pointer; padding: 0; }
+.ms-face:active { border-color: #808080 #fff #fff #808080; }
+.ms-grid { display: grid; grid-template-columns: repeat(var(--w), 1fr); border: 3px solid; border-color: #808080 #fff #fff #808080; touch-action: manipulation; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+.ms-c { width: min(9vw, 34px); height: min(9vw, 34px); padding: 0; background: #c3c3c3; border: 3px solid; border-color: #fff #808080 #808080 #fff; font: bold min(5.5vw, 20px) Tahoma, sans-serif; display: grid; place-items: center; cursor: pointer; }
+.ms-c.open { border: 1px solid #8a8a8a; background: #d6d6d6; cursor: default; }
+.ms-c.boom { background: #ff4040; }
+.ms-c.wrong { background: repeating-linear-gradient(45deg, #ffb3b3 0 4px, #c3c3c3 4px 8px); }
+.ms-c svg { width: 80%; height: 80%; }
+.ms-c.n1 { color: #0000ff; } .ms-c.n2 { color: #008000; } .ms-c.n3 { color: #ff0000; } .ms-c.n4 { color: #000080; }
+.ms-c.n5 { color: #800000; } .ms-c.n6 { color: #008080; } .ms-c.n7 { color: #000; } .ms-c.n8 { color: #808080; }
+.ms-mode { display: flex; gap: 8px; justify-content: center; margin: 12px 0 4px; }
+.ms-mode .btn.on { border-color: #808080 #fff #fff #808080; background: #b0b0b0; box-shadow: none; }
+.ms-hint { text-align: center; font: 12px Tahoma, sans-serif; color: #333; margin: 6px 0 0; }
