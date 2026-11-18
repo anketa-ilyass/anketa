@@ -1154,3 +1154,5 @@ body { background: transparent; }
 .z-scribble { mix-blend-mode: normal; opacity: 1; z-index: 3;
   text-shadow: 0 0 1px #f2f1ee, 2px 0 0 #f2f1ee, -2px 0 0 #f2f1ee, 0 2px 0 #f2f1ee, 0 -2px 0 #f2f1ee,
     2px 2px 0 #f2f1ee, -2px -2px 0 #f2f1ee, 2px -2px 0 #f2f1ee, -2px 2px 0 #f2f1ee, 3px 0 1px #f2f1ee, -3px 0 1px #f2f1ee, 0 3px 1px #f2f1ee, 0 -3px 1px #f2f1ee; }
+/* RU: «для друзей» под заголовком, не перекрывает буквы */
+.z-head:not(.pre) .z-scribble { position: static; display: block; text-align: right; margin: -6px 6px -4px 0; transform: rotate(-5deg); text-shadow: none; }
